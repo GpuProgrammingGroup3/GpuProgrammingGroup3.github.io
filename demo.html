@@ -107,10 +107,10 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 			
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-md-4">
 					<p><a href="images/data_distribution.PNG" class="image-popup"><img src="images/data_distribution.PNG" class="img-responsive" alt="image"></a></p>
 					</div>
-					<div class="col-md-9">
+					<div class="col-md-8">
 					<p><a href="images/data_comparison.PNG" class="image-popup"><img src="images/data_comparison.PNG" class="img-responsive" alt="image"></a></p>
 					</div>
 					<div class="fh5co-spacer fh5co-spacer-sm"></div>
@@ -129,17 +129,53 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 						<h2 class="h4">Approach</h2>
                         <p>We chose <mark>Mobile Net</mark> due to the limited computation resources.</p>
                         <p>And we have implemented data augmentation by scaling, filpping and shifting.</p>
-                        <p>We also do <mark><b>multi-step transfer learning</b></mark> according to data size.</p>
+                        <p>We also implemented <mark><b>multi-step transfer learning</b></mark> 
+                           according to data size:</p>
                         <p>First, from ImageNet to 錫少(Too little tin), 
                            and second, from 錫少(Too little tin) to 錫多(Too much tin).</p>
 					</div>
+					<div class="col-md-12">
+					    <p>
+                        <a href="images/result_little.PNG" class="image-popup">
+                        <img src="images/result_little.PNG" class="img-responsive" alt="image"></a></p>
+					</div>
+					<div class="col-md-12">
+					    <p>
+                        <a href="images/result_much.PNG" class="image-popup">
+                        <img src="images/result_much.PNG" class="img-responsive" alt="image"></a></p>
+					</div>
 					<div class="col-md-6 col-sm-6">
 						<h2 class="h4">Result</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt hic, placeat aliquam odio eius. Veniam ad quas non minima velit ullam ab aliquid animi deserunt, dolor facere neque vel mollitia.</p>
+                        <p>In 錫少(Too little tin) case,
+                           <b>fail</b> class has 111 images and
+                           <b>pass</b> class has 962 images.</p>
+                        <p>After retraining for 40 steps, we choose 88 testing images,
+                           and get <mark>96.5% accuracy</mark>. The learning curve is on
+                           the first curve plot above.</p>
+                        <p>In 錫多(Too much tin) case,
+                           <b>fail</b> class has 20 images and
+                           <b>pass</b> class has 22 images.</p>
+                        <p>After the second-step transfer learning, we choose 2 testing images,
+                           and get <mark>100% accuracy</mark>. However, it turns out that
+                           the output probability is not so sure(51% v.s. 49%). The learning curve is on
+                           the second curve plot above.</p>
+                        <p>The result of t-SNE visulization is on the plot below. We can say that
+                           different cases in one same class (e.g. less fail[2] and less pass[3]) can be
+                           seperated well, but different cases in all classes can not.</p>
 					</div>
 					<div class="col-md-6 col-sm-6">
 						<h2 class="h4">Future Work</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt hic, placeat aliquam odio eius. Veniam ad quas non minima velit ullam ab aliquid animi deserunt, dolor facere neque vel mollitia.</p>
+                        <p>Data cleaning is needed, because outputs from AOI machine is not clean. 
+                           However, it may takes effort to come up with a good algorithm.</p>
+                        <p>Also, if the hardware is good enough, 
+                           we can try more complicated model structure such as ResNet50, VGG19, ... etc..</p>
+                        <p>The output of AOI machine also includes some failure messages. it should be much better
+                           if we implement sentence embedding improvement.</p>
+					</div>
+					<div class="col-md-12">
+					    <p>
+                        <a href="images/result_tSNE.PNG" class="image-popup">
+                        <img src="images/result_tSNE.PNG" class="img-responsive" alt="image"></a></p>
 					</div>
 				</div>
 			</div>
