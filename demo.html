@@ -107,23 +107,37 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 			
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-					<p><a href="images/img_large_1.jpg" class="image-popup"><img src="images/img_large_1.jpg" class="img-responsive" alt="image"></a></p>
+					<div class="col-md-3">
+					<p><a href="images/data_distribution.PNG" class="image-popup"><img src="images/data_distribution.PNG" class="img-responsive" alt="image"></a></p>
+					</div>
+					<div class="col-md-9">
+					<p><a href="images/data_comparison.PNG" class="image-popup"><img src="images/data_comparison.PNG" class="img-responsive" alt="image"></a></p>
 					</div>
 					<div class="fh5co-spacer fh5co-spacer-sm"></div>
-					<div class="col-md-4 col-sm-6">
+					<div class="col-md-6 col-sm-6">
 						<h2 class="h4">Dataset</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt hic, placeat aliquam odio eius. Veniam ad quas non minima velit ullam ab aliquid animi deserunt, dolor facere neque vel mollitia.</p>
+                        <p>There are many types of data, and we focus 
+                           on 錫少(Too little tin) and 錫多(Too much tin).</p>
+                        <p>However, there are many difficulties of the dataset, such as fail-pass bias,
+                           <b>images are not clean</b>, and same class different type issue.</p>
+                        <p>At first, we wanted to separate the area
+                           out by focusing on green in HSV
+                           space, but it didn't work like what we thought.</p>
+                        <p>After some trials, we decided to do it without separating the area out.</p>
 					</div>
-					<div class="col-md-4 col-sm-6">
+					<div class="col-md-6 col-sm-6">
 						<h2 class="h4">Approach</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt hic, placeat aliquam odio eius. Veniam ad quas non minima velit ullam ab aliquid animi deserunt, dolor facere neque vel mollitia.</p>
+                        <p>We chose <mark>Mobile Net</mark> due to the limited computation resources.</p>
+                        <p>And we have implemented data augmentation by scaling, filpping and shifting.</p>
+                        <p>We also do <mark><b>multi-step transfer learning</b></mark> according to data size.</p>
+                        <p>First, from ImageNet to 錫少(Too little tin), 
+                           and second, from 錫少(Too little tin) to 錫多(Too much tin).</p>
 					</div>
-					<div class="col-md-4 col-sm-6">
+					<div class="col-md-6 col-sm-6">
 						<h2 class="h4">Result</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt hic, placeat aliquam odio eius. Veniam ad quas non minima velit ullam ab aliquid animi deserunt, dolor facere neque vel mollitia.</p>
 					</div>
-					<div class="col-md-4 col-sm-6">
+					<div class="col-md-6 col-sm-6">
 						<h2 class="h4">Future Work</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt hic, placeat aliquam odio eius. Veniam ad quas non minima velit ullam ab aliquid animi deserunt, dolor facere neque vel mollitia.</p>
 					</div>
